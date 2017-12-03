@@ -51,7 +51,11 @@ function replace(bandName) {
 }
 
 const sortedBands = bands.sort((a,b) => replace(a) > replace (b) ? 1 : -1);
-console.log(sortedBands);
+
+document.querySelector('#bands').innerHTML =
+  sortedBands
+    .map(band => `<li>${band}</li>`)
+    .join('');
 
 </script>
 
